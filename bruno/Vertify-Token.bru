@@ -1,0 +1,21 @@
+meta {
+  name: Vertify-Token
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/test-jwt/verify-token
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6MSwidXNlcm5hbWUiOiJrZW4iLCJwYXNzd29yZCI6IjEyMyJ9LCJpYXQiOjE3MzkyNDM0NTIsImV4cCI6MTczOTI0MzU3Mn0.WaVNd2gsdkkcIHloivhTtPa_KjIfZi_2EEkK-V5bAxY
+}
+
+body:json {
+  {
+    "name": "simon"
+  }
+}

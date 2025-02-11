@@ -1,0 +1,21 @@
+meta {
+  name: VIP
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3000/test-jwt/vip
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6MSwidXNlcm5hbWUiOiJrZW4iLCJwYXNzd29yZCI6IjEyMyJ9LCJpYXQiOjE3MzkyNDM3NTMsImV4cCI6MTczOTI0Mzg3M30._wT40eH8aOG3IWzxsJ2xhkAwRvWSuc7N1cx9jNuL8Uo
+}
+
+body:json {
+  {
+    "name": "simon"
+  }
+}
