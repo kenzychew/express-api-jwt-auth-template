@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const logger = require("morgan");
+const testJwtRouter = require("./controllers/test-jwt");
 
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.set("debug", true);
@@ -16,9 +17,8 @@ app.use(cors());
 app.use(express.json());
 app.use(logger("dev"));
 
-app.post("/", (req, res) => {
-  res.send({ body: req.body });
-});
+// URL Prefix in server
+app.use("/test-jwt", testJwtRouter);
 
 // Routes go here
 
