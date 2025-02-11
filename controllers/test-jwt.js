@@ -1,6 +1,7 @@
 // controllers/test-jwt.js
 const jwt = require("jsonwebtoken");
 const express = require("express");
+const verifyToken = require("../middleware/verifyToken");
 const router = express.Router();
 
 // URL suffix in controller
@@ -27,6 +28,16 @@ router.post("/verify-token", (req, res) => {
 });
 
 router.get("/vip", verifyToken, (req, res) => {
+  res.json({ msg: "secret" });
+});
+
+router.use(verifyToken); //? Everything below triggers verifyToken
+
+router.get("/vip", verifyToken, (req, res) => {
+  res.json({ msg: "secret" });
+});
+
+router.get("/secret", verifyToken, (req, res) => {
   res.json({ msg: "secret" });
 });
 
